@@ -1,0 +1,10 @@
+{
+  "name": "htl3rennweg/php-coding-standards",
+  "description": "PSR-12 Code Style Example Project",
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "^3.64"
+  },
+  "scripts": {
+    "fix": "php-cs-fixer fix"
+  }
+}
