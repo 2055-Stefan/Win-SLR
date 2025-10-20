@@ -17,7 +17,9 @@ jobs:
           php-version: '8.2'
 
       - name: Install dependencies
+        working-directory: ./php-coding-standards
         run: composer install --no-progress --prefer-dist
 
       - name: Run PHP CS Fixer
+        working-directory: ./php-coding-standards
         run: vendor/bin/php-cs-fixer fix --dry-run --diff
