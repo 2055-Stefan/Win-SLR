@@ -1,6 +1,9 @@
 {
   "name": "htl3rennweg/php-coding-standards",
   "description": "PSR-12 Code Style Example Project",
+  "require": {
+    "php": ">=8.2"
+  },
   "require-dev": {
     "friendsofphp/php-cs-fixer": "^3.64"
   },
