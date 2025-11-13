@@ -1,31 +1,34 @@
-# Coding Standards – PSR-12 Guide
+# Coding Standards – PSR-12 Leitfaden
 
 ## Ziel
-Dieses Projekt hält sich an die [PSR-12 Coding Standard](https://www.php-fig.org/psr/psr-12/) Richtlinien.
+Das Projekt hält sich an die [PSR-12-Richtlinien](https://www.php-fig.org/psr/psr-12/), um einheitlichen und wartbaren PHP-Code sicherzustellen.
 
 ## Tools
-- **PHP CS Fixer** – automatisches Formatieren
-- **GitHub Actions** – automatischer Style-Check bei jedem Commit
-- **Composer-Script** `composer fix` – lokale Formatierung
+- **PHP CS Fixer** – automatisches Formatieren  
+- **GitHub Actions** – automatischer Style-Check bei jedem Commit  
+- **Composer-Script** `composer fix` – lokale Formatierung  
+- **VS Code** – Formatierung beim Speichern aktiviert
 
 ## Regeln
-- Code muss PSR-12-konform sein.
-- Keine unbenutzten `use`-Statements.
-- Nur Short-Arrays `[]` verwenden.
-- Nur `'single quotes'` bei Strings ohne Variablen.
+- Code ist **PSR-12-konform**.  
+- Keine unbenutzten `use`-Anweisungen.  
+- Nur Short-Arrays `[]` und `'single quotes'` ohne Variablen.  
+- 4 Leerzeichen Einrückung, keine Tabs.  
+- Jede Datei endet mit einer Leerzeile.
 
-## Prozess
-1. Beim Speichern formatiert die IDE automatisch.
-2. Vor jedem Commit → `composer fix`.
-3. GitHub Actions prüft Code Style.
-4. Verstöße müssen behoben werden, bevor Merge möglich ist.
+## Ablauf
+1. Code wird beim Speichern automatisch formatiert.  
+2. Vor jedem Commit wird `composer fix` ausgeführt.  
+3. GitHub Actions prüft den Code-Style bei jedem Push.  
+4. Verstöße müssen lokal behoben und erneut gepusht werden, bevor ein Merge möglich ist.
 
-## Team Training and Process for Style Deviations
+## Team und Abweichungen
+Alle Teammitglieder kennen den PSR-12-Standard und den Umgang mit dem PHP CS Fixer.  
+Bei Style-Verstößen:
+1. Die CI-Pipeline zeigt betroffene Dateien.  
+2. Entwickler führt `composer fix` aus.  
+3. Nach erneutem Push wird der Check grün (erfolgreich).
 
-All team members are familiar with the PSR-12 coding standard and know how to use the PHP CS Fixer.
-The tool automatically formats code when saving files in VS Code and can also be executed manually using `composer fix`.
-
-In case of code-style violations detected by the CI workflow:
-1. The pipeline fails and shows the diff of the violations.
-2. The responsible developer runs `composer fix` locally.
-3. After verifying the fix, the corrected code is committed and pushed again.
+## Quellen
+- [PSR-12 Standard](https://www.php-fig.org/psr/psr-12/)  
+- [PHP CS Fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer)
